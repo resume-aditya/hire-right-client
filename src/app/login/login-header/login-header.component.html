@@ -1,7 +1,10 @@
 <div class="login-header--color login-header--layout">
     <span class="logo">HireRight</span>
     <div class="login-form">
-        <input type="text" placeholder="Username">
-        <input type="text" placeholder="Password">
+        <form (ngSubmit)=loginSubmit()>
+            <input type="text" placeholder="Username" name="username" [(ngModel)]="username" (keyup)="usernameChange()">
+            <input type="password" placeholder="Password" name="password" [(ngModel)]="password" >
+            <button type="submit" [disabled]="stopLogin">{{buttonText}}</button>
+        </form>
     </div>
 </div>
